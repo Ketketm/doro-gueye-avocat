@@ -71,11 +71,22 @@
     counter-reset: section;
   }
   nav.toc li { counter-increment: section; }
-  nav.toc li::before {
-    content: counter(section, decimal-leading-zero) ' ';
-    color: var(--encre-faint); margin-right: 6px;
+  nav.toc li a {
+    color: var(--encre-muted);
+    transition: color .15s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
   }
-  nav.toc a:hover { color: var(--bordeaux); }
+  nav.toc li a::before {
+    content: counter(section, decimal-leading-zero);
+    color: var(--encre-faint);
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.86em;
+  }
+  nav.toc li a:hover { color: var(--bordeaux); }
+  nav.toc li a:hover::before { color: var(--bordeaux); }
   nav.toc .meta {
     font-size: 0.72rem; color: var(--encre-faint);
     letter-spacing: 0.18em; text-transform: uppercase;
@@ -135,28 +146,35 @@
     scroll-margin-top: 88px;
   }
   section.s:nth-of-type(even) { background: var(--papier-warm); }
-  .section-head { display: flex; align-items: baseline; gap: 32px; margin-bottom: 56px; }
-  .section-num {
-    font-family: var(--serif); font-size: 3rem; color: var(--or);
-    font-weight: 400; line-height: 1; letter-spacing: -0.02em;
+  .section-head {
+    display: grid; grid-template-columns: 72px 1fr; gap: 24px;
+    align-items: baseline; margin-bottom: 64px;
+    max-width: 880px;
   }
-  .section-meta { flex: 1; }
+  .section-num {
+    font-family: var(--serif); font-size: 2.6rem; color: var(--or);
+    font-weight: 400; line-height: 1; letter-spacing: -0.02em;
+    text-align: right;
+  }
   .section-meta h2 {
     font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 2.8rem);
     font-weight: 500; line-height: 1.1; letter-spacing: -0.01em;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .section-meta .section-lead {
     color: var(--encre-soft); font-size: 1rem; line-height: 1.7;
-    max-width: 56ch;
   }
   .section-rule { width: 56px; height: 2px; background: var(--bordeaux); margin: 26px 0 32px; }
 
+  /* Body prose stays within a comfortable measure; visual blocks (gallery, palette,
+   * grid, etc.) keep full width via their own containers. */
   h3.subhead {
     font-family: var(--serif); font-size: 1.5rem; font-weight: 500;
     color: var(--encre); margin: 56px 0 20px; line-height: 1.2;
+    max-width: 880px;
   }
   h3.subhead:first-child { margin-top: 0; }
+  .s > .wrap > p { max-width: 880px; }
   p { color: var(--encre-soft); line-height: 1.75; margin-bottom: 14px; max-width: 70ch; }
   p strong { color: var(--encre); }
 
