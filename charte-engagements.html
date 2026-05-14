@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charte d'engagements — Cabinet d'avocats D.G · Maître Doro Gueye</title>
+<meta name="description" content="Charte d'engagements professionnels du Cabinet d'avocats D.G : déontologie, méthode, transparence des honoraires, confidentialité, résolution des litiges. Un document public, opposable au cabinet.">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<meta name="theme-color" content="#6E1F2A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<style>
+  /* ===== CHARTE-ENGAGEMENTS SPECIFIC ===== */
+  .engagement-hero {
+    padding: 96px 0 72px;
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--line);
+  }
+  .engagement-hero .wrap { max-width: 880px; }
+  .engagement-hero .eyebrow {
+    font-size: 0.74rem; letter-spacing: 0.26em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 22px;
+    display: inline-block;
+  }
+  .engagement-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 500; line-height: 1.06; letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .engagement-hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .engagement-hero .lead {
+    font-size: 1.1rem; line-height: 1.75; color: var(--ink-soft);
+    max-width: 56ch; margin-bottom: 28px;
+  }
+  .engagement-hero .meta {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+  }
+  .engagement-hero .meta dt {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 4px;
+  }
+  .engagement-hero .meta dd {
+    font-family: var(--serif); font-size: 1.05rem; color: var(--ink);
+  }
+
+  /* Sticky table of contents */
+  .engagement-toc {
+    position: sticky; top: 130px;
+    align-self: start;
+    font-size: 0.85rem;
+  }
+  .engagement-toc .toc-head {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 14px;
+  }
+  .engagement-toc ol {
+    list-style: none; counter-reset: e;
+    border-left: 1px solid var(--line);
+    padding-left: 0;
+  }
+  .engagement-toc li {
+    counter-increment: e;
+    padding: 7px 0 7px 16px;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    line-height: 1.35;
+  }
+  .engagement-toc li::before {
+    content: counter(e, decimal-leading-zero);
+    color: var(--ink-faint);
+    margin-right: 10px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.78em;
+  }
+  .engagement-toc a {
+    color: var(--ink-soft);
+    transition: color .15s;
+  }
+  .engagement-toc a:hover { color: var(--accent); }
+
+  /* Main two-column layout */
+  .engagement-body { padding: 80px 0 96px; }
+  .engagement-body .wrap {
+    display: grid; grid-template-columns: 1fr 3fr; gap: 64px;
+    align-items: start;
+  }
+
+  /* Article sections */
+  .engagement-articles {
+    counter-reset: art;
+  }
+  .article {
+    counter-increment: art;
+    padding-bottom: 56px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 130px;
+  }
+  .article:last-child { border-bottom: none; margin-bottom: 0; }
+  .article .num-row {
+    display: flex; align-items: baseline; gap: 18px; margin-bottom: 18px;
+  }
+  .article .article-num {
+    font-family: var(--serif); font-size: 1.05rem;
+    color: var(--gold); letter-spacing: 0.06em;
+    font-style: italic;
+  }
+  .article .article-num::before { content: 'Article '; }
+  .article h2 {
+    font-family: var(--serif); font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    font-weight: 500; line-height: 1.18; letter-spacing: -0.005em;
+    color: var(--ink); flex: 1;
+  }
+  .article-rule { width: 40px; height: 2px; background: var(--accent); margin: 0 0 24px; }
+  .article p, .article li {
+    color: var(--ink-soft); font-size: 1rem; line-height: 1.78;
+    margin-bottom: 14px;
+  }
+  .article p strong, .article li strong { color: var(--ink); font-weight: 500; }
+  .article ul, .article ol {
+    padding-left: 22px; margin-bottom: 14px;
+  }
+  .article ul { list-style: none; padding-left: 0; }
+  .article ul li {
+    padding-left: 22px; position: relative; margin-bottom: 8px;
+  }
+  .article ul li::before {
+    content: '—'; position: absolute; left: 0; color: var(--accent);
+  }
+  .article ol li { margin-bottom: 8px; }
+
+  .article .commitment {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin: 18px 0;
+    font-family: var(--serif); font-style: italic;
+    font-size: 1.1rem; line-height: 1.5; color: var(--ink);
+  }
+  .article .commitment::before {
+    content: 'Engagement — ';
+    font-family: var(--sans); font-style: normal; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    font-weight: 500; display: block; margin-bottom: 8px;
+  }
+
+  .article .ref-table {
+    margin-top: 18px; font-size: 0.88rem;
+    background: var(--paper-warm); border-radius: 4px;
+    padding: 18px 22px;
+  }
+  .article .ref-table .head {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 10px;
+  }
+  .article .ref-table dl {
+    display: grid; grid-template-columns: auto 1fr; gap: 4px 14px;
+  }
+  .article .ref-table dt { color: var(--ink-soft); font-weight: 500; }
+  .article .ref-table dd { color: var(--ink-soft); font-style: italic; }
+
+  /* Signature footer of the charte */
+  .signature-block {
+    margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end;
+  }
+  .signature-name {
+    font-family: var(--serif); font-size: 1.5rem;
+    color: var(--ink); margin-bottom: 4px;
+  }
+  .signature-role {
+    font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .signature-stamp {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .signature-mark {
+    width: 64px; height: 64px;
+    border-radius: 4px; overflow: hidden;
+  }
+  .signature-mark img { width: 100%; height: 100%; object-fit: cover; }
+  .signature-date {
+    font-size: 0.78rem; color: var(--ink-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .engagement-body .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .engagement-toc { position: static; }
+    .signature-block { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP MINI-BAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <a class="tb-item" href="https://www.google.com/maps/search/?api=1&query=133+Boulevard+D%C3%A9odat+de+S%C3%A9v%C3%A9rac+31300+Toulouse" target="_blank" rel="noopener">
+        <svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>133 Bd Déodat de Sévérac, Toulouse</span>
+      </a>
+      <span class="tb-sep tb-hide-on-mobile">·</span>
+      <span class="tb-item tb-hide-on-mobile">
+        <svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 2"/>
+        </svg>
+        <span>Lun – Sam, sur rendez-vous</span>
+      </span>
+    </div>
+    <div class="topbar-right">
+      <a class="tb-item tb-hide-on-mobile" href="mailto:contact.avocat.dg@gmail.com">
+        <svg class="tb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        <span>contact.avocat.dg@gmail.com</span>
+      </a>
+      <span class="tb-sep tb-hide-on-mobile">·</span>
+      <a class="tb-social" href="https://www.linkedin.com/in/doro-gueye-16050626/" target="_blank" rel="noopener" aria-label="LinkedIn du cabinet">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap header-top">
+    <a href="./index.html" class="brand" aria-label="Cabinet D.G – Maître Doro Gueye">
+      <span class="brand-mark" aria-hidden="true"><img src="./assets/images/logos/mark-light.png" alt="" width="44" height="44"></span>
+      <span class="brand-text">
+        <span class="brand-name">Maître Doro Gueye</span>
+        <span class="brand-sub">Cabinet d'avocats D.G</span>
+      </span>
+    </a>
+    <div class="header-right">
+      <a class="header-phone" href="tel:+33624146114">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>06 24 14 61 14</span>
+      </a>
+      <a href="./contact.html" class="header-cta">Contactez-moi</a>
+    </div>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <div class="wrap">
+    <ol>
+      <li><a href="./index.html">Accueil</a></li><li class="sep">›</li><li class="current">Charte d'engagements</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="engagement-hero">
+  <div class="wrap">
+    <span class="eyebrow">Document public, opposable au cabinet</span>
+    <h1>Charte d'<em>engagements</em> professionnels</h1>
+    <p class="lead">
+      Ce document formalise les règles que le Cabinet d'avocats D.G s'impose vis-à-vis de ses clients,
+      au-delà des seules obligations légales et déontologiques. Il est consultable à tout moment
+      et engage le cabinet à l'égard de toute personne qui lui confie un dossier.
+    </p>
+    <dl class="meta">
+      <div><dt>Version</dt><dd>1.0</dd></div>
+      <div><dt>En vigueur depuis</dt><dd>Mai 2026</dd></div>
+      <div><dt>Prochaine révision</dt><dd>Annuelle, mai 2027</dd></div>
+      <div><dt>Avocat fondateur</dt><dd>Me Doro Gueye</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===== BODY ===== -->
+<section class="engagement-body">
+  <div class="wrap">
+
+    <aside class="engagement-toc">
+      <div class="toc-head">Sommaire</div>
+      <ol>
+        <li><a href="#preambule">Préambule</a></li>
+        <li><a href="#deontologie">Cadre déontologique</a></li>
+        <li><a href="#secret">Secret professionnel</a></li>
+        <li><a href="#independance">Indépendance et conflits d'intérêts</a></li>
+        <li><a href="#methode">Méthode de prise en charge</a></li>
+        <li><a href="#disponibilite">Disponibilité et délais</a></li>
+        <li><a href="#honoraires">Transparence des honoraires</a></li>
+        <li><a href="#amiable">Voie amiable, voie contentieuse</a></li>
+        <li><a href="#rgpd">Données personnelles et RGPD</a></li>
+        <li><a href="#accessibilite">Accessibilité et non-discrimination</a></li>
+        <li><a href="#litige">Résolution des litiges avec le cabinet</a></li>
+        <li><a href="#evolution">Évolution de cette charte</a></li>
+      </ol>
+    </aside>
+
+    <div class="engagement-articles">
+
+      <article class="article" id="preambule">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Préambule</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Le Cabinet d'avocats D.G, fondé en 2015 à Toulouse par Maître Doro Gueye, avocat à la Cour et docteur en droit, s'engage à offrir à chaque client un accompagnement juridique <strong>rigoureux, transparent et humain</strong>. La présente charte précise les pratiques quotidiennes du cabinet et les engagements qu'il prend au-delà des obligations légales.</p>
+        <p>Elle s'adresse aussi bien au client en cours de mandat qu'au visiteur du site qui s'interroge sur la manière dont le cabinet travaille. Sa publication a une valeur d'engagement&nbsp;: tout manquement caractérisé peut être invoqué devant l'Ordre des avocats du Barreau de Toulouse ou le médiateur de la consommation de la profession.</p>
+        <div class="commitment">
+          Apporter une réelle valeur ajoutée à ses clients, en les accompagnant dans leurs projets, avec une dimension à la fois juridique et humaine.
+        </div>
+      </article>
+
+      <article class="article" id="deontologie">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Cadre déontologique</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Maître Doro Gueye exerce dans le strict respect des règles déontologiques de la profession d'avocat, telles qu'établies par la loi, les décrets d'application et le Règlement Intérieur National (RIN) de la profession.</p>
+        <p>Le cabinet observe en particulier les principes essentiels suivants&nbsp;:</p>
+        <ul>
+          <li><strong>Indépendance</strong> — l'avocat agit librement, sans subir d'influence extérieure susceptible d'altérer son jugement professionnel.</li>
+          <li><strong>Probité et honneur</strong> — la conduite du dossier ne peut être dissociée des règles éthiques de la profession.</li>
+          <li><strong>Loyauté</strong> — vis-à-vis du client, de la partie adverse, du juge et de l'ensemble des intervenants.</li>
+          <li><strong>Confraternité</strong> — relations avec les autres avocats encadrées par des règles de courtoisie et de respect mutuel.</li>
+          <li><strong>Diligence et compétence</strong> — toute affaire confiée fait l'objet d'un travail effectif, sérieux et à jour des évolutions législatives et jurisprudentielles.</li>
+        </ul>
+        <div class="ref-table">
+          <div class="head">Textes de référence</div>
+          <dl>
+            <dt>Loi n° 71-1130</dt><dd>31 décembre 1971 portant réforme de la profession judiciaire</dd>
+            <dt>Décret n° 91-1197</dt><dd>27 novembre 1991 organisant la profession d'avocat</dd>
+            <dt>RIN</dt><dd>Règlement Intérieur National de la profession d'avocat</dd>
+            <dt>RIBT</dt><dd>Règlement Intérieur du Barreau de Toulouse</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="article" id="secret">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Secret professionnel</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Le secret professionnel est <strong>général, absolu et illimité dans le temps</strong>. Il couvre l'intégralité des correspondances, conversations, notes, dossiers et pièces communiqués au cabinet, y compris ceux échangés avec d'autres avocats dans le cadre de la défense du client.</p>
+        <p>Concrètement, le cabinet s'engage à&nbsp;:</p>
+        <ul>
+          <li>ne jamais divulguer à un tiers le nom d'un client ou l'existence d'un mandat sans autorisation écrite préalable&nbsp;;</li>
+          <li>protéger les pièces du dossier par un classement physique et numérique sécurisé&nbsp;;</li>
+          <li>n'employer que des collaborateurs et prestataires liés par une obligation de confidentialité équivalente&nbsp;;</li>
+          <li>conserver les éléments confiés pendant la durée nécessaire au dossier puis selon les délais légaux d'archivage.</li>
+        </ul>
+        <p>Aucune autorité, à l'exception des cas strictement prévus par la loi, ne peut contraindre l'avocat à révéler ce qui lui a été confié.</p>
+        <div class="commitment">
+          Tout ce qui est confié au cabinet y reste — y compris ce qui ne sera jamais plaidé.
+        </div>
+      </article>
+
+      <article class="article" id="independance">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Indépendance et conflits d'intérêts</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Avant toute acceptation de mandat, le cabinet procède à une <strong>vérification systématique des conflits d'intérêts potentiels</strong>. Cette vérification porte sur les dossiers en cours et les dossiers clos récemment.</p>
+        <p>Le cabinet refuse tout mandat qui&nbsp;:</p>
+        <ul>
+          <li>oppose le futur client à un client déjà conseillé dans une affaire connexe&nbsp;;</li>
+          <li>met en cause une partie pour laquelle des informations confidentielles ont été reçues, même de manière indirecte&nbsp;;</li>
+          <li>est susceptible de placer Maître Gueye dans une position l'obligeant à choisir entre deux intérêts contradictoires.</li>
+        </ul>
+        <p>En cas de conflit révélé en cours de mandat, le cabinet s'engage à informer le client sans délai, à se déporter, et à faciliter la reprise du dossier par un confrère choisi par le client.</p>
+      </article>
+
+      <article class="article" id="methode">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Méthode de prise en charge</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Tout dossier suit un protocole en quatre temps&nbsp;:</p>
+        <ol>
+          <li><strong>Premier rendez-vous</strong> — évaluation honnête du dossier, des chances raisonnables de succès, des délais probables, des coûts envisagés. Aucun engagement n'est pris à ce stade.</li>
+          <li><strong>Convention d'honoraires écrite</strong> — signée avant tout début de prestation. Elle précise l'étendue de la mission, le mode de calcul, les frais et débours, les conditions de résiliation.</li>
+          <li><strong>Suivi documenté</strong> — chaque étape du dossier donne lieu à un courriel ou un courrier récapitulatif, accessible à tout moment sur demande du client.</li>
+          <li><strong>Restitution</strong> — à la clôture du dossier, le client reçoit un dossier complet (chronologie, pièces, décisions) qu'il peut conserver ou faire suivre.</li>
+        </ol>
+        <p>Chaque dossier est traité <strong>personnellement par Maître Gueye</strong>, qui demeure l'interlocuteur unique. Les éventuelles tâches d'exécution (formalités, signification) peuvent être déléguées à des collaborateurs ou auxiliaires de justice clairement identifiés.</p>
+      </article>
+
+      <article class="article" id="disponibilite">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Disponibilité et délais</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Le cabinet s'engage à&nbsp;:</p>
+        <ul>
+          <li>accuser réception de toute sollicitation écrite sous <strong>48 heures ouvrées</strong>&nbsp;;</li>
+          <li>répondre sur le fond à toute demande de point d'étape sous <strong>cinq jours ouvrés</strong>&nbsp;;</li>
+          <li>traiter en priorité absolue les <strong>urgences déontologiques</strong> (garde à vue, déféré, placement en rétention administrative ou en zone d'attente, comparution immédiate) — quel que soit le jour ou l'heure&nbsp;;</li>
+          <li>prévenir le client d'au moins <strong>72 heures à l'avance</strong> de toute audience ou échéance procédurale connue.</li>
+        </ul>
+        <p>En cas d'absence prolongée (vacances, formation, mission), le cabinet désigne au client un confrère susceptible de prendre le relais pour les urgences, ou propose un report concerté des échéances quand cela est possible.</p>
+      </article>
+
+      <article class="article" id="honoraires">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Transparence des honoraires</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Les honoraires sont fixés <strong>en accord avec le client avant tout commencement de prestation</strong>, dans une convention écrite. Ils tiennent compte de la complexité du dossier, du temps prévisible à y consacrer, des résultats attendus et de la situation patrimoniale du client.</p>
+        <p>Tarification de référence&nbsp;:</p>
+        <ul>
+          <li><strong>Premier rendez-vous</strong> — 75 € TTC, environ une heure, évaluation complète du dossier.</li>
+          <li><strong>Taux horaire</strong> — 150 € TTC/heure, applicable par défaut.</li>
+          <li><strong>Forfait</strong> — proposé lorsque la mission est circonscrite (rédaction d'acte, procédure type).</li>
+          <li><strong>Honoraires de résultat</strong> — possibles, dans le respect de la déontologie, en complément d'honoraires fixes. Jamais à titre exclusif.</li>
+        </ul>
+        <p>Le cabinet s'engage à&nbsp;:</p>
+        <ul>
+          <li>ne facturer que les diligences effectivement accomplies&nbsp;;</li>
+          <li>fournir, sur demande, un relevé détaillé des heures et actes engagés&nbsp;;</li>
+          <li>informer immédiatement le client de tout dépassement prévisible et obtenir son accord écrit avant engagement&nbsp;;</li>
+          <li>étudier systématiquement l'éligibilité à l'<strong>aide juridictionnelle</strong> (totale ou partielle) et accompagner la constitution du dossier auprès du BAJ de Toulouse si elle est applicable.</li>
+        </ul>
+        <p>Une <strong>assurance protection juridique</strong> peut prendre en charge tout ou partie des honoraires&nbsp;: le cabinet vous informe de cette possibilité et facilite les démarches auprès de l'assureur. Le client conserve dans tous les cas le <strong>libre choix de l'avocat</strong> (article L. 127-3 du Code des assurances).</p>
+      </article>
+
+      <article class="article" id="amiable">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Voie amiable, voie contentieuse</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Conformément à l'article 4 de la loi du 18 novembre 2016 de modernisation de la justice et à la pratique du cabinet, <strong>la voie amiable est systématiquement examinée avant toute action contentieuse</strong>. Lorsqu'elle est envisageable, elle est proposée — accompagnée d'une analyse honnête de ses chances et de ses limites.</p>
+        <p>Le cabinet recourt à&nbsp;:</p>
+        <ul>
+          <li>la négociation directe avec la partie adverse ou son conseil&nbsp;;</li>
+          <li>la médiation conventionnelle ou judiciaire (avec un médiateur tiers neutre)&nbsp;;</li>
+          <li>la procédure participative, dans les domaines où elle est applicable.</li>
+        </ul>
+        <p>Le passage au contentieux est réservé aux situations où&nbsp;:</p>
+        <ul>
+          <li>l'amiable a échoué ou est manifestement inutile&nbsp;;</li>
+          <li>l'urgence empêche de l'expérimenter (mesures conservatoires, référés)&nbsp;;</li>
+          <li>la matière l'exclut (pénal, certaines procédures administratives).</li>
+        </ul>
+        <p>Dans tous les cas, la décision finale appartient au client&nbsp;: le cabinet expose les options, leurs coûts, leurs délais et leurs risques, mais ne se substitue jamais à son choix.</p>
+      </article>
+
+      <article class="article" id="rgpd">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Données personnelles et RGPD</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Le traitement des données personnelles confiées au cabinet est régi par le Règlement (UE) 2016/679 (RGPD), la loi Informatique et Libertés modifiée, et la déontologie de la profession.</p>
+        <p>Le cabinet s'engage à&nbsp;:</p>
+        <ul>
+          <li>ne collecter que les données <strong>strictement nécessaires</strong> au traitement du dossier&nbsp;;</li>
+          <li>les utiliser <strong>uniquement aux fins déclarées</strong> (conseil, défense, exécution)&nbsp;;</li>
+          <li>les conserver pendant la durée nécessaire au mandat, puis selon les délais légaux d'archivage&nbsp;;</li>
+          <li>ne les communiquer à aucun tiers à des fins commerciales — jamais&nbsp;;</li>
+          <li>répondre sous un mois à toute demande d'accès, de rectification, d'effacement ou d'opposition (article 15 et suivants du RGPD).</li>
+        </ul>
+        <p>Pour exercer vos droits ou poser toute question relative à vos données&nbsp;: <a href="mailto:contact.avocat.dg@gmail.com" style="color: var(--accent);">contact.avocat.dg@gmail.com</a>. En cas de désaccord persistant, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color: var(--accent);">cnil.fr</a>).</p>
+        <p>Une <a href="./politique-confidentialite.html" style="color: var(--accent);">politique de confidentialité détaillée</a> est consultable sur ce site.</p>
+      </article>
+
+      <article class="article" id="accessibilite">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Accessibilité et non-discrimination</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>Le cabinet reçoit sans distinction d'origine, de nationalité, de sexe, d'orientation sexuelle, d'âge, de religion, de conviction politique, de situation économique, de handicap ou d'apparence physique.</p>
+        <p>Les locaux du cabinet, situés au 133 Boulevard Déodat de Sévérac à Toulouse, sont accessibles aux personnes à mobilité réduite&nbsp;: [à confirmer par Doro — précisions sur l'accès].</p>
+        <p>Pour les personnes ne parlant pas français, le cabinet recourt à un interprète professionnel (français-anglais, français-arabe, français-wolof, autres langues sur demande). Les frais d'interprétariat sont précisés dans la convention d'honoraires.</p>
+        <p>Pour les personnes en situation de handicap auditif, le cabinet peut conduire un rendez-vous en visioconférence avec sous-titrage automatique ou interprétation en LSF — sur demande préalable.</p>
+      </article>
+
+      <article class="article" id="litige">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Résolution des litiges avec le cabinet</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>En cas de désaccord avec le cabinet, plusieurs voies sont ouvertes&nbsp;:</p>
+        <ol>
+          <li><strong>Réclamation directe</strong> — par écrit, à l'adresse du cabinet ou par email à <a href="mailto:contact.avocat.dg@gmail.com" style="color: var(--accent);">contact.avocat.dg@gmail.com</a>. Le cabinet s'engage à apporter une réponse motivée sous quinze jours ouvrés.</li>
+          <li><strong>Bâtonnier de l'Ordre</strong> — le Bâtonnier du Barreau de Toulouse peut être saisi pour conciliation. Cette saisine est gratuite et confidentielle.</li>
+          <li><strong>Médiateur de la consommation</strong> — conformément aux articles L. 612-1 et suivants du Code de la consommation, vous pouvez recourir gratuitement au médiateur de la consommation de la profession d'avocat&nbsp;:
+            <div class="ref-table" style="margin-top: 10px;">
+              <div class="head">Médiateur</div>
+              <dl>
+                <dt>Médiateur</dt><dd>Carine Denoit-Benteux</dd>
+                <dt>Adresse</dt><dd>180, boulevard Haussmann, 75008 Paris</dd>
+                <dt>Site</dt><dd><a href="https://mediateur-consommation-avocat.fr" target="_blank" rel="noopener" style="color: var(--accent);">mediateur-consommation-avocat.fr</a></dd>
+              </dl>
+            </div>
+          </li>
+          <li><strong>Action contentieuse</strong> — le tribunal judiciaire est compétent en dernier recours.</li>
+        </ol>
+      </article>
+
+      <article class="article" id="evolution">
+        <div class="num-row">
+          <span class="article-num"></span>
+          <h2>Évolution de cette charte</h2>
+        </div>
+        <div class="article-rule"></div>
+        <p>La présente charte est révisée <strong>au moins une fois par an</strong>, avec mention de la nouvelle version en en-tête. Les évolutions majeures (modification des tarifs, ajout d'engagements, retrait d'engagements) sont signalées aux clients en cours de mandat par courriel.</p>
+        <p>Les versions antérieures sont conservées par le cabinet à fin de traçabilité et restent opposables au cabinet pour les dossiers ouverts sous leur empire.</p>
+        <p>Toute suggestion d'amélioration peut être adressée à <a href="mailto:contact.avocat.dg@gmail.com" style="color: var(--accent);">contact.avocat.dg@gmail.com</a> — les retours clients sont une matière première essentielle pour cette charte.</p>
+      </article>
+
+      <div class="signature-block">
+        <div>
+          <div class="signature-name">Maître Doro Gueye</div>
+          <div class="signature-role">Avocat à la Cour, Case 491 — Docteur en droit</div>
+          <p style="margin-top: 14px; font-size: 0.88rem; color: var(--ink-muted);">Toulouse, le 14 mai 2026.</p>
+        </div>
+        <div class="signature-stamp">
+          <span class="signature-mark"><img src="./assets/images/logos/mark-light.png" alt=""></span>
+          <div>
+            <div style="font-family: var(--serif); font-size: 1.05rem; color: var(--ink);">Cabinet D.G</div>
+            <div class="signature-date">Version 1.0 — Mai 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <span class="footer-brand-mark" aria-hidden="true"><img src="./assets/images/logos/mark-burgundy.png" alt="" width="44" height="44"></span>
+          <div>
+            <div class="footer-brand-name">Maître Doro Gueye</div>
+            <div class="footer-brand-sub">Cabinet d'avocats D.G</div>
+          </div>
+        </div>
+        <a class="footer-phone" href="tel:+33624146114">06 24 14 61 14</a>
+        <a class="footer-phone-2" href="tel:+33988045499">Cabinet · 09 88 04 54 99</a>
+        <a href="./contact.html" class="footer-contact-btn">Contactez-moi <span>→</span></a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <div class="address-link" tabindex="0" aria-haspopup="dialog">
+          133, Boulevard Déodat de Sévérac<br>31300 Toulouse
+          <span class="address-popover" role="dialog" aria-label="Plan d'accès au cabinet">
+            <iframe
+              src="https://www.google.com/maps?q=133+Boulevard+D%C3%A9odat+de+S%C3%A9v%C3%A9rac+31300+Toulouse&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Plan d'accès du Cabinet d'avocats D.G"></iframe>
+            <span class="address-popover-foot">
+              <span class="name">Cabinet d'avocats D.G</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=133+Boulevard+D%C3%A9odat+de+S%C3%A9v%C3%A9rac+31300+Toulouse" target="_blank" rel="noopener">Itinéraire ↗</a>
+            </span>
+          </span>
+        </div>
+        <p style="margin-top:14px;"><a href="https://www.google.com/maps/search/?api=1&query=133+Boulevard+Déodat+de+Sévérac+31300+Toulouse" target="_blank" rel="noopener" style="color:var(--gold);">Voir sur la carte →</a></p>
+        <p style="margin-top:14px;"><a href="mailto:contact.avocat.dg@gmail.com" style="color:#e8e3d8;">contact.avocat.dg@gmail.com</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horaires</h4>
+        <dl class="footer-hours">
+          <dt>Lun – Ven</dt><dd>9 h – 12 h<br>14 h – 18 h</dd>
+          <dt>Samedi</dt><dd>9 h – 12 h <em>(sur RDV)</em></dd>
+          <dt>Dimanche</dt><dd>Fermé</dd>
+        </dl>
+      </div>
+
+      <div class="footer-col">
+        <h4>Documents</h4>
+        <ul>
+          <li><a href="./charte-engagements.html">Charte d'engagements</a></li>
+          <li><a href="./charte-graphique.html">Charte graphique</a></li>
+          <li><a href="./mentions-legales.html">Mentions légales</a></li>
+          <li><a href="./politique-confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="./plan-du-site.html">Plan du site</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Réseaux</h4>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/doro-gueye-16050626/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Cabinet d'avocats D.G — Maître Doro Gueye · Avocat à la Cour, Case 491 · SIRET [à compléter] · <a href="https://www.nérée.com" target="_blank" rel="noopener">www.nérée.com</a></div>
+      <div>Site conçu par <a href="https://www.nérée.com" target="_blank" rel="noopener" style="color:var(--gold);">l'agence Nérée</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
