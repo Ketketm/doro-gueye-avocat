@@ -18,7 +18,7 @@
   --accent: #6E1F2A;
   --accent-deep: #4F1620;
   --accent-soft: #F1E0DD;
-  --gold: #B68A45;
+  --gold: #8A7B62; /* doré neutralisé en taupe sobre (charte disciplinée) */
   --max: 1240px;
   --radius: 4px;
   --serif: 'Cormorant Garamond', 'Times New Roman', serif;
@@ -222,40 +222,34 @@ nav.primary li:hover > .mega, nav.primary li:focus-within > .mega {
 
 /* ===== HOMEPAGE HERO (dark) ===== */
 .hero {
-  position: relative; color: #fff; overflow: hidden; isolation: isolate;
-  padding: 64px 0 56px; border-bottom: 1px solid #000;
+  position: relative; color: var(--ink); overflow: hidden; isolation: isolate;
+  padding: 72px 0 64px; border-bottom: 1px solid var(--line);
+  background: var(--paper);
 }
 .hero::before {
-  content: ''; position: absolute; inset: 0; z-index: -2;
-  background: radial-gradient(ellipse at 25% 35%, #2a1d1d 0%, #110707 55%, #000 100%);
-}
-.hero::after {
   content: ''; position: absolute; inset: 0; z-index: -1;
-  background:
-    linear-gradient(135deg, rgba(110,31,42,0.10), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(195,153,97,0.08), transparent 60%);
+  background: radial-gradient(ellipse at 75% 0%, rgba(110,31,42,0.05) 0%, transparent 55%);
 }
 .hero-grid {
-  display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center;
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: center;
 }
 .hero-eyebrow {
-  font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500; margin-bottom: 26px;
+  font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 22px;
 }
 .hero h1 {
-  font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.4rem);
-  font-weight: 500; line-height: 1.04; letter-spacing: -0.01em;
-  margin-bottom: 28px; color: #fff;
+  font-family: var(--serif); font-size: clamp(2.3rem, 4.4vw, 3.8rem);
+  font-weight: 500; line-height: 1.06; letter-spacing: -0.01em;
+  margin-bottom: 22px; color: var(--ink);
 }
-.hero h1 em {
-  font-style: italic; color: var(--gold); font-weight: 400;
-  border-bottom: 2px solid var(--accent); padding-bottom: 4px;
-}
+.hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
 .hero-lead {
-  font-size: 1.08rem; line-height: 1.75; color: #d8d3c8;
-  max-width: 56ch; margin-bottom: 36px;
+  font-size: 1.08rem; line-height: 1.7; color: var(--ink-soft);
+  max-width: 52ch; margin-bottom: 28px;
 }
-.hero-lead strong { color: #fff; font-weight: 500; }
+.hero-lead strong { color: var(--ink); font-weight: 600; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
+.hero-note { font-size: 0.85rem; color: var(--ink-muted); }
 
 .hero-phones { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 32px; }
 .phone-card {
@@ -292,24 +286,22 @@ nav.primary li:hover > .mega, nav.primary li:focus-within > .mega {
 .btn:hover .arrow { transform: translateX(3px); }
 
 .hero-portrait {
-  aspect-ratio: 4/5;
-  background: radial-gradient(ellipse at 50% 30%, #3a2828 0%, #1a0d0d 70%);
-  border-radius: 6px; border: 1px solid rgba(255,255,255,0.10);
   position: relative; overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px;
+  box-shadow: 0 24px 50px -28px rgba(40,20,20,0.30);
 }
 .hero-portrait img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  width: 100%; aspect-ratio: 4/5;
   object-fit: cover; display: block;
-  filter: grayscale(20%) contrast(1.05) brightness(0.85);
+  filter: grayscale(18%) contrast(1.03);
 }
-.hero-portrait::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%),
-              linear-gradient(135deg, rgba(110,31,42,0.15) 0%, transparent 50%);
-  pointer-events: none;
+.hero-portrait-cap {
+  padding: 16px 18px; border-top: 3px solid var(--accent);
+  background: var(--surface);
 }
+.hp-name { display: block; font-family: var(--serif); font-size: 1.2rem; color: var(--ink); }
+.hp-role { display: block; font-size: 0.74rem; letter-spacing: 0.04em; color: var(--ink-muted); margin-top: 2px; }
 .portrait-caption {
   position: absolute; bottom: 18px; left: 22px; right: 22px;
   font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -416,6 +408,36 @@ nav.primary li:hover > .mega, nav.primary li:focus-within > .mega {
 }
 .svc-card:hover .svc-link .arrow { transform: translateX(4px); }
 .svc-link .arrow { transition: transform .18s; }
+
+/* ----- Domaines : 2 prioritaires larges + 4 compacts ----- */
+.services-grid--featured { grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.services-grid--compact { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.svc-card--featured { min-height: auto; padding: 30px 32px; border-left: 3px solid var(--accent); }
+.svc-case { font-size: 0.86rem; color: var(--ink-muted); font-style: italic; margin-top: 8px; }
+.svc-card--featured .svc-text { flex: none; }
+.services-grid--compact .svc-card { min-height: auto; padding: 22px 22px; }
+.services-grid--compact .svc-title { font-size: 1.1rem; margin-bottom: 6px; }
+.services-grid--compact .svc-case { font-style: normal; margin: 0 0 4px; flex: 1; }
+@media (max-width: 860px) {
+  .services-grid--featured { grid-template-columns: 1fr; }
+  .services-grid--compact { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .services-grid--compact { grid-template-columns: 1fr; }
+}
+
+/* ----- Bloc avis sobre (remplace les faux témoignages) ----- */
+.reviews-note { padding: 52px 0; border-bottom: 1px solid var(--line); background: var(--paper-warm); text-align: center; }
+.reviews-note .eyebrow { color: var(--accent); margin-bottom: 12px; }
+.reviews-note h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500; color: var(--ink); margin-bottom: 12px; }
+.reviews-note p { color: var(--ink-muted); max-width: 56ch; margin: 0 auto; }
+
+/* ----- Honoraires en liste sobre ----- */
+.hono-list { border-top: 1px solid var(--line); }
+.hono-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 18px 2px; border-bottom: 1px solid var(--line); }
+.hono-row dt { color: var(--ink-soft); font-size: 0.98rem; }
+.hono-row dd { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); white-space: nowrap; }
+.hono-row--note dd { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-muted); font-style: italic; }
 
 /* ===== EDITORIAL SECTIONS ===== */
 section.editorial { padding: 72px 0; border-bottom: 1px solid var(--line); }
