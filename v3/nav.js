@@ -1,4 +1,4 @@
-/* V3 — menu mobile : bascule body.nav-open au clic sur ☰ */
+/* V3, menu mobile : bascule body.nav-open au clic sur ☰ */
 (function () {
   "use strict";
   var toggle = document.querySelector(".nav-toggle");

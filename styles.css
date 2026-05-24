@@ -1,10 +1,10 @@
 /* ===================================================================
- * Cabinet d'avocats D.G — Maître Doro Gueye
+ * Cabinet d'avocats D.G, Maître Doro Gueye
  * Feuille de style partagée pour toutes les pages.
  * =================================================================== */
 
 :root {
-  /* Canonical palette — aligned on charte-graphique.html */
+  /* Canonical palette, aligned on charte-graphique.html */
   --paper: #FAF7F1;
   --paper-warm: #EFE9DF;
   --surface: #FFFFFF;

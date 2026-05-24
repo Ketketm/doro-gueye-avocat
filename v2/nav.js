@@ -1,5 +1,5 @@
 /* ============================================================================
- * Cabinet d'avocats D.G — Navigation mobile (V2)
+ * Cabinet d'avocats D.G, Navigation mobile (V2)
  * Ouvre/ferme le menu (bouton ☰) sous 940px. Injecte aussi le bouton
  * « Prendre rendez-vous » dans le menu (caché sur mobile dans le header).
  * ========================================================================== */

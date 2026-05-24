@@ -1,10 +1,10 @@
 /* ===================================================================
- * Cabinet d'avocats D.G — Maître Doro Gueye
+ * Cabinet d'avocats D.G, Maître Doro Gueye
  * Feuille de style partagée pour toutes les pages.
  * =================================================================== */
 
 :root {
-  /* Canonical palette — aligned on charte-graphique.html */
+  /* Canonical palette, aligned on charte-graphique.html */
   --paper: #FAF7F1;
   --paper-warm: #EFE9DF;
   --surface: #FFFFFF;
@@ -1226,10 +1226,10 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
 }
 
 /* ===================================================================
- * V2 — Additions Refonte (retours Me Gueye, mai 2026)
+ * V2, Additions Refonte (retours Me Gueye, mai 2026)
  * =================================================================== */
 
-/* Topbar — paire d'emails côte à côte */
+/* Topbar, paire d'emails côte à côte */
 .tb-email-pair { display: inline-flex; align-items: center; gap: 8px; }
 .tb-email-pair .tb-tag {
   font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -1239,7 +1239,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .tb-email-pair .tb-item:first-child { display: none; }
 }
 
-/* HERO — Monogramme DG en visuel principal */
+/* HERO, Monogramme DG en visuel principal */
 .hero-monogram {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   background: var(--paper-warm);
@@ -1268,7 +1268,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .hero-monogram img { max-width: 200px; }
 }
 
-/* RDV BLOCK — Carte « Prendre rendez-vous » au-dessus du pli */
+/* RDV BLOCK, Carte « Prendre rendez-vous » au-dessus du pli */
 .rdv-block {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1322,7 +1322,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .rdv-block .rdv-info { grid-template-columns: 1fr; text-align: left; }
 }
 
-/* DOMAINES — Sections accordéon */
+/* DOMAINES, Sections accordéon */
 .domain-section {
   padding: 72px 0;
   border-top: 1px solid var(--line);
@@ -1391,7 +1391,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
 }
 
-/* CABINET — Bio + portrait (page Le cabinet) */
+/* CABINET, Bio + portrait (page Le cabinet) */
 .bio-section {
   padding: 72px 0;
 }
@@ -1424,7 +1424,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .bio-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
-/* CHARTE — 12 articles compacts en 2 colonnes */
+/* CHARTE, 12 articles compacts en 2 colonnes */
 .charte-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1454,7 +1454,7 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .charte-grid { grid-template-columns: 1fr; }
 }
 
-/* CONTACT — Bloc « 2 mails » étiquetés */
+/* CONTACT, Bloc « 2 mails » étiquetés */
 .contact-emails-block {
   background: var(--paper-warm);
   border: 1px solid var(--line);
@@ -1492,6 +1492,6 @@ footer { background: var(--ink); color: #b8b3a8; padding: 72px 0 28px; font-size
   .contact-emails-grid { grid-template-columns: 1fr; }
 }
 
-/* HERO — V2 surcharge: la grille hero garde son layout mais le visuel devient monogramme */
+/* HERO, V2 surcharge: la grille hero garde son layout mais le visuel devient monogramme */
 .hero .hero-grid > .hero-monogram { align-self: center; }
 

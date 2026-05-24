@@ -1,5 +1,5 @@
 /* ============================================================================
- * Cabinet d'avocats D.G — Sélecteur de versions (TEMPORAIRE)
+ * Cabinet d'avocats D.G, Sélecteur de versions (TEMPORAIRE)
  * ----------------------------------------------------------------------------
  * Pastille flottante permettant de comparer les 3 versions du site :
  *   • Version actuelle   (V1, racine /)
