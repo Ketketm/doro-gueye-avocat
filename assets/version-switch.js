@@ -15,9 +15,9 @@
   "use strict";
 
   var VERSIONS = [
-    { id: "v1", home: "/",     label: "Version actuelle", desc: "Le site en ligne" },
-    { id: "v2", home: "/v2/",  label: "Nouvelle version", desc: "Refonte cabinet" },
-    { id: "v3", home: "/v3/",  label: "Style Label",      desc: "Inspiration label-avocats" }
+    { id: "v1", home: "/",     label: "V1", sub: "Actuelle", desc: "Version en ligne" },
+    { id: "v2", home: "/v2/",  label: "V2", sub: "Refonte",  desc: "Refonte du cabinet" },
+    { id: "v3", home: "/v3/",  label: "V3", sub: "Label",    desc: "Style label-avocats" }
   ];
 
   var path = window.location.pathname;
@@ -38,14 +38,17 @@
     ".dg-vswitch__lead{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#b9b9c6;white-space:nowrap}" +
     ".dg-vswitch__opts{display:flex;gap:4px}" +
     ".dg-vswitch__opt{font-size:.78rem;font-weight:500;color:#e8e8ef;text-decoration:none;" +
-      "padding:7px 13px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}" +
+      "padding:6px 13px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}" +
+    ".dg-vswitch__opt b{font-weight:700}" +
+    ".dg-vswitch__opt span{opacity:.62;font-weight:400}" +
     ".dg-vswitch__opt:hover{background:rgba(255,255,255,.10)}" +
-    ".dg-vswitch__opt[aria-current='true']{background:#fff;color:#13131f;font-weight:600}" +
+    ".dg-vswitch__opt[aria-current='true']{background:#fff;color:#13131f}" +
+    ".dg-vswitch__opt[aria-current='true'] span{opacity:.55}" +
     ".dg-vswitch__close{flex:0 0 auto;width:24px;height:24px;border-radius:50%;border:none;cursor:pointer;" +
       "background:rgba(255,255,255,.10);color:#fff;font-size:.85rem;line-height:1;display:flex;align-items:center;justify-content:center}" +
     ".dg-vswitch__close:hover{background:rgba(255,255,255,.20)}" +
-    "@media (max-width:640px){.dg-vswitch__lead{display:none}.dg-vswitch__opt{padding:7px 10px;font-size:.72rem}" +
-      ".dg-vswitch__bar{padding:6px 6px 6px 10px}}";
+    "@media (max-width:640px){.dg-vswitch__lead{display:none}.dg-vswitch__opt span{display:none}" +
+      ".dg-vswitch__opt{padding:8px 14px;font-size:.8rem}.dg-vswitch__bar{padding:6px 6px 6px 10px}}";
   var style = document.createElement("style");
   style.textContent = css;
   document.head.appendChild(style);
@@ -60,13 +63,13 @@
     var isCur = v.id === current;
     return '<a class="dg-vswitch__opt" href="' + v.home + '"' +
       (isCur ? ' aria-current="true"' : '') +
-      ' title="' + v.desc + '">' + v.label + '</a>';
+      ' title="' + v.desc + '"><b>' + v.label + '</b> <span>' + v.sub + '</span></a>';
   }).join("");
 
   var bar = document.createElement("div");
   bar.className = "dg-vswitch__bar";
   bar.innerHTML =
-    '<span class="dg-vswitch__lead">Aperçu · 3 versions</span>' +
+    '<span class="dg-vswitch__lead">Voir&nbsp;:</span>' +
     '<span class="dg-vswitch__opts">' + opts + '</span>' +
     '<button class="dg-vswitch__close" type="button" aria-label="Masquer le comparateur">×</button>';
 
