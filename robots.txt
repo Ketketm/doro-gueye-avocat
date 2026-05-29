@@ -1,0 +1,8 @@
+# Cabinet d'avocats D.G — Maître Doro Gueye
+User-agent: *
+Allow: /
+Disallow: /v2/
+Disallow: /v3/
+Disallow: /charte-graphique
+
+Sitemap: https://doro-gueye-avocat.vercel.app/sitemap.xml
