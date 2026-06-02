@@ -1160,6 +1160,36 @@ footer { background: var(--ink); color: #b8b3a8; padding: 56px 0 28px; font-size
 @media (max-width: 940px) {
   .header-nav-row { display: none; }
   .menu-toggle { display: inline-flex; }
+
+  /* ----- Menu mobile (ouvert via le bouton ☰, géré par nav.js) ----- */
+  header.nav-open .header-nav-row {
+    display: block; padding: 4px 0 14px;
+    border-top: 1px solid var(--line-soft);
+    max-height: calc(100vh - 72px); overflow-y: auto;
+  }
+  header.nav-open nav.primary { width: 100%; }
+  header.nav-open nav.primary > ul {
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  header.nav-open nav.primary > ul > li {
+    position: static; border-bottom: 1px solid var(--line-soft);
+  }
+  header.nav-open nav.primary a,
+  header.nav-open nav.primary .navlink {
+    width: 100%; justify-content: space-between;
+    padding: 14px 6px; font-size: 1rem;
+  }
+  header.nav-open .mega {
+    position: static; transform: none; box-shadow: none;
+    border: none; border-radius: 0; min-width: 0;
+    padding: 2px 0 8px 16px; display: none;
+  }
+  header.nav-open li.open > .mega {
+    display: block; opacity: 1; visibility: visible; transform: none;
+  }
+  header.nav-open li.open > .navlink { color: var(--accent); }
+  header.nav-open li.open > .navlink .caret { transform: rotate(180deg); }
+  .caret { transition: transform .15s; }
   .header-cta { display: none; }
   .hero { padding: 64px 0; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1188,4 +1218,19 @@ footer { background: var(--ink); color: #b8b3a8; padding: 56px 0 28px; font-size
   .form-row { grid-template-columns: 1fr; }
   .form-card { padding: 28px 22px; }
   .sitemap-grid { grid-template-columns: 1fr; }
+
+  /* ----- Header compact (évite le débordement) ----- */
+  .header-top { gap: 10px; padding: 12px 0; }
+  .brand { gap: 10px; }
+  .brand-mark { height: 40px; padding-right: 11px; }
+  .brand-name { font-size: 1.12rem; }
+  .brand-sub { font-size: 0.56rem; letter-spacing: 0.14em; }
+  .header-right { gap: 8px; }
+  .header-phone { padding: 9px 11px; }
+  .header-phone span { display: none; }      /* bouton d'appel en icône seule */
+  .header-phone svg { width: 18px; height: 18px; }
+}
+@media (max-width: 380px) {
+  .brand-sub { display: none; }              /* gain de place sur très petits écrans */
+  .brand-name { font-size: 1.05rem; }
 }
