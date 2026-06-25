@@ -5,4 +5,4 @@ Disallow: /v2/
 Disallow: /v3/
 Disallow: /charte-graphique
 
-Sitemap: https://doro-gueye-avocat.vercel.app/sitemap.xml
+Sitemap: https://www.cabinet-avocatdg-toulouse.com/sitemap.xml
